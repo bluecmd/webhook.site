@@ -1,19 +1,25 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: webhook
   namespace: webhook
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/issuer: letsencrypt
+    kubernetes.io/ingress.class: "nginx"
 spec:
+  tls:
+  - hosts:
+    - webhook.k8s.kamellabs.ch
+    secretName: webhook.k8s.kamellabs.ch
   rules:
-  - host: webhook.localhost
+  - host: webhook.k8s.kamellabs.ch
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: webhook
-          servicePort: 8084
-  tls:
-  - hosts:
-    - webhook.localhost
+          service:
+            name: webhook
+            port:
+              number: 8084

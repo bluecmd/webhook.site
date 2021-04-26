@@ -37,18 +37,10 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <div class="nav navbar-left navbar-form">
-                    <a href="https://github.com/fredsted/webhook.site" target="_blank"
+                    <a href="https://github.com/bluecmd/webhook.site" target="_blank"
                        style="margin-top: 7px"
                        class="btn btn-xs btn-link">
                         Github Page</a>
-                    <a href="https://github.com/fredsted/webhook.site#donate" target="_blank"
-                       style="margin-top: 7px"
-                       class="btn btn-xs btn-link">
-                        Donate</a>
-                    <a href="https://twitter.com/fredsted" target="_blank"
-                       style="margin-top: 7px"
-                       class="btn btn-xs btn-link">
-                        @fredsted</a>
                 </div>
                 <div class="nav navbar-right navbar-form hidden-sm">&nbsp;
                     <button type="button" class="btn btn-link openModal" data-modal="#editUrlModal"
@@ -127,13 +119,6 @@
                     <button type="button" class="close" data-dismiss="tutorial" aria-label="Close"
                             ng-click="toggleTutorial()">
                         <span aria-hidden="true">&times;</span></button>
-                    <p><strong>Webhook.site</strong>
-                        allows you to easily test webhooks and other types of HTTP requests.
-                        <a href="https://simonfredsted.com/1583" target="_blank">What is a webhook?</a></p>
-                    <p>Any requests sent to that URL are logged here instantly
-                        &mdash; you don't even have to refresh!</p>
-                    <hr>
-                    <p>Here's your unique URL that was created just now:</p>
                     <p>
                         <code>{{ protocol }}//{{ domain }}/{{ token.uuid }}</code>
                         <a class="btn btn-xs btn-link copyTokenUrl" data-clipboard-target="#tokenUrl"
@@ -144,16 +129,9 @@
                            target="_blank">
                             <span class="glyphicon glyphicon-new-window"></span> Open in new tab</a>
                     </p>
-                    <hr>
-                    <p>Bookmark this page to go back to the requests at any time.</p>
-                    <p></p>Click <b>New URL</b> to create a new url with the ability to
+                    <p>Bookmark this page to go back to the requests at any time.
+                    Click <b>New URL</b> to create a new url with the ability to
                         customize status code, response body, etc.</p>
-                    <p>
-                        <a class="github-button" href="https://github.com/fredsted/webhook.site"
-                           data-icon="octicon-star" data-show-count="true"
-                           aria-label="Star fredsted/webhook.site on GitHub">Star on GitHub</a>
-                        <a href="https://github.com/fredsted/webhook.site"
-                    </p>
                 </div>
                 <div ng-show="hasRequests">
                     <div class="container-fluid">
